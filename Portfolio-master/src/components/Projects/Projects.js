@@ -2,26 +2,46 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
-const Projects = () => {
+import editor from "../../Assets/Projects/codeEditor.png"; // Placeholder image
+import leaf from "../../Assets/Projects/leaf.png"; // Placeholder image
+
+function Projects() {
   return (
-    <div className="projects">
-      <h2>Projects</h2>
-      <div>
-        <h3>BankShield Fraud Detection System</h3>
-        <p>
-          A web-based fraud detection system using HTML, CSS, JavaScript, and AWS services (EC2, Load Balancer, Auto Scaling, WAF)
-          to improve scalability and security.
+    <Container fluid className="project-section">
+      <Particle />
+      <Container>
+        <h1 className="project-heading">
+          <strong className="purple">Gaurav Chamoli's </strong> Projects
+        </h1>
+        <p style={{ color: "white" }}>
+          Here are a few projects I've worked on recently.
         </p>
-        <a href="#">Project Link (Coming Soon)</a>
-      </div>
-    </div>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={editor} // Replace with a relevant image if available
+              isBlog={false}
+              title="Binary Classification"
+              description="A machine learning project for binary classification tasks using various supervised learning models."
+              ghLink="https://github.com/GauravDEN/Binary-classification"
+              demoLink=""
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={leaf} // Replace with a relevant image if available
+              isBlog={false}
+              title="ML-APP"
+              description="A machine learning application built to demonstrate model deployment, performance, and interaction."
+              ghLink="https://github.com/GauravDEN/ML-APP"
+              demoLink=""
+            />
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   );
-};
+}
 
 export default Projects;
